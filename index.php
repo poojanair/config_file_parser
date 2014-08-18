@@ -1,6 +1,6 @@
 <?php
 $local_file = 'config.txt';
-$filepath = "path/to/file/" . $local_file;
+$filepath = $local_file;
 $booleanTrue = array ("true","1","on","yes");
 $contents = $data = array ();
 
@@ -42,7 +42,7 @@ foreach ( $contents as $key => $value ) {
 		case 'test_mode':
 		case 'debug_mode':
 		case 'send_notifications':
-			echo in_array (strtolower($value), $booleanTrue) ? ucfirst($key) . " :  true" : ucfirst($key) . " : false"; 
+			echo ucfirst($key) . " : " . (in_array (strtolower($value), $booleanTrue) ? "true" : "false");
 			echo "<br/>";
 			break;
 					
